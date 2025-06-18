@@ -17,21 +17,22 @@ class DatabaseSeeder extends Seeder
     {
         User::factory()->create([
             'name' => 'Test User',
+            'username' => 'testuser',
             'email' => 'test@example.com'
         ]);
 
-        // $categories =[
-        //     'Technology',
-        //     'Health',
-        //     'Science',
-        //     'Sports',
-        //     'Politics',
-        //     'Entertainment',
-        // ];
+        $categories =[
+            'Technology',
+            'Health',
+            'Science',
+            'Sports',
+            'Politics',
+            'Entertainment',
+        ];
 
-        // foreach ($categories as $category){
-        //     Category::create(['name'=>$category]);
-        // }
+        foreach ($categories as $category){
+            Category::create(['name'=>$category]);
+        }
 
         // Post::factory(100)->create();
 
