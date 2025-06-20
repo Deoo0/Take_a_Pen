@@ -12,13 +12,13 @@
             </div>
 
             <div class="mt-8 text-gray-900">
-                    @forelse ($posts as $post)
-                        <x-post-item :post="$post"></x-post-item>
-                    @empty
-                        <div class="text-center text-gray-400 py-16">No Posts Found</div>
-                    @endforelse
+                @forelse ($posts as $post)
+                    <x-post-item :post="$post"></x-post-item>
+                @empty
+                    <div class="text-center text-gray-400 py-16">No Posts Found</div>
+                @endforelse
             </div>
-            {{$posts->onEachSide(1)->links()}}
+            {{ $posts->onEachSide(1)->links() }}
         </div>
     </div>
 </x-app-layout>
