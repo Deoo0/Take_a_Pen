@@ -7,7 +7,7 @@
 
                 <h1 class="text-4xl mb-4">{{ $post->title }}</h1>
                 {{-- User Avatar --}}
-                <div class="flex gap-4">
+                <x-follow-ctr :user="$post->user" class="flex gap-4">
                     <x-user-avatar :user="$post->user" />
                     <div>
                         <div class="flex gap-2">
@@ -15,7 +15,11 @@
                                 {{ $post->user->name }}
                             </a>
                             &middot;
-                            <a href="" class="text-emerald-500">Follow</a>
+                            <button x-text="following ? 'Unfollow' : 'Follow'"
+                                :class="following ? 'text-red-600 hover:text-red-700' :
+                                    'text-emerald-600 hover:text-emerald-700'"
+                                    @click="follow()">
+                            </button>
                         </div>
                         <div class="flex gap-2 text-gray-600">
                             {{ $post->readTime() }} min read
@@ -24,7 +28,7 @@
 
                         </div>
                     </div>
-                </div>
+                </x-follow-ctr>
                 {{-- Clap Section --}}
                 <x-clap-button></x-clap-button>
                 {{-- Content --}}
