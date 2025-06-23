@@ -30,7 +30,7 @@
                     </div>
                 </x-follow-ctr>
                 {{-- Clap Section --}}
-                <x-clap-button></x-clap-button>
+                <x-clap-button :post="$post"></x-clap-button>
                 {{-- Content --}}
                 <div class="mt-8">
                     <img src="{{ $post->imageUrl() }}" alt="{{ $post->title }}" class="w-full">
@@ -45,7 +45,7 @@
                         {{ $post->category->name }}
                     </span>
                 </div>
-                <x-clap-button></x-clap-button>
+                <x-clap-button :post="$post"></x-clap-button>
             </div>
         </div>
     </div>

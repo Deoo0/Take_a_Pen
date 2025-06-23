@@ -21,6 +21,10 @@ class Post extends Model
         'published_at',
     ];
 
+    public function claps(){
+        return $this->hasMany(Clap::class);
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);
