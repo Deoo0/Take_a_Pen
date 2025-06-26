@@ -21,6 +21,6 @@
         </a>
     </div>
     <a href="#" >
-        <img class="w-48 h-full object-cover rounded-r-lg mx-h-64" src=" {{Storage::url($post->image)}} " alt="" />
+        <img class="w-48 h-full object-cover rounded-r-lg mx-h-64" src=" {{$post->imageUrl()}} " alt="" />
     </a>
 </div>

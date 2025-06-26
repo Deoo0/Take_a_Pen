@@ -14,12 +14,14 @@
                             <a href="{{ route('profile.show', $post->user) }}" class="hover:underline">
                                 {{ $post->user->name }}
                             </a>
-                            &middot;
-                            <button x-text="following ? 'Unfollow' : 'Follow'"
-                                :class="following ? 'text-red-600 hover:text-red-700' :
-                                    'text-emerald-600 hover:text-emerald-700'"
+                            @auth
+                                &middot;
+                                <button x-text="following ? 'Unfollow' : 'Follow'"
+                                    :class="following ? 'text-red-600 hover:text-red-700' :
+                                        'text-emerald-600 hover:text-emerald-700'"
                                     @click="follow()">
-                            </button>
+                                </button>
+                            @endauth
                         </div>
                         <div class="flex gap-2 text-gray-600">
                             {{ $post->readTime() }} min read
